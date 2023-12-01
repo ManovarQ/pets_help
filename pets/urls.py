@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.PostView.as_view()),
     path('<int:pk>/', views.PostDetail.as_view()),
     path('review/<int:pk>/', views.AddComments.as_view(), name='add_comments'),
+    path('create/', views.PostCreateView.as_view(), name='create_post'),
 ]

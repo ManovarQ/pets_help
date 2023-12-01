@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Post(models.Model):
@@ -7,6 +8,11 @@ class Post(models.Model):
     author = models.CharField(max_length=100)
     date = models.DateField()
     img = models.ImageField(upload_to='image/%Y')
+
+
+    def get_absolute_url(self):
+        return ('/')
+
 
     def __str__(self):
         return f'{self.title}, {self.author}'
